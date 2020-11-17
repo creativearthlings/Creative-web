@@ -1,0 +1,422 @@
+/* navabr */
+
+.navbar-transparent {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar-transparent .navbar-brand {
+  color: white;
+}
+
+.navbar-transparent .navbar-toggler {
+  color: white;
+}
+
+.navbar-transparent .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (min-width: 768px) {
+  .navbar-transparent .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .navbar-transparent .navbar-nav .nav-link:hover,
+  .navbar-transparent .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.navbar .navbar-brand img{
+  height: 40px;
+  width: 40px;
+}
+
+/* navbar components css */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #525f7f;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0 solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.3rem;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .nav-item {
+    margin-right: .5rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.25rem;
+  }
+
+  .navbar-nav .nav-link i {
+    margin-right: .625rem;
+  }
+
+  .navbar-nav .nav-link-icon {
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+  }
+
+  .navbar-nav .nav-link-icon i {
+    margin-right: 0;
+  }
+
+  .navbar-nav .dropdown-menu {
+    opacity: 0;
+    pointer-events: none;
+    margin: 0;
+  }
+
+  .navbar-nav .dropdown-menu:before {
+    background: #fff;
+    box-shadow: none;
+    content: '';
+    display: block;
+    height: 16px;
+    width: 16px;
+    left: 5px;
+    position: absolute;
+    bottom: 100%;
+    transform: rotate(-45deg) translateY(1rem);
+    z-index: -5;
+    border-radius: 0.2rem;
+  }
+
+  .navbar-nav:not(.navbar-nav-hover) .dropdown-menu.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: show-navbar-dropdown .25s ease forwards;
+  }
+
+  .navbar-nav:not(.navbar-nav-hover) .dropdown-menu.close {
+    display: block;
+    animation: hide-navbar-dropdown .15s ease backwards;
+  }
+
+  .navbar-nav.navbar-nav-hover .dropdown-menu {
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transform: translate(0, 10px) perspective(200px) rotateX(-2deg);
+    transition: visibility 0.25s, opacity 0.25s, transform 0.25s;
+    animation: none;
+  }
+
+  .navbar-nav.navbar-nav-hover .nav-item.dropdown:hover>.dropdown-menu {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0, 0);
+    animation: none;
+  }
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(12, 12, 12, 0.65);
+}
+.maybe{
+  padding-top: 1300px;
+  color: transparent;
+  width: 100%;
+}
+
+/* navbar collapse */
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.navbar-collapse-header {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    padding: .625rem 0;
+    color: #172b4d !important;
+  }
+
+  .navbar-nav .dropdown-menu {
+    box-shadow: none;
+    min-width: auto;
+  }
+
+  .navbar-nav .dropdown-menu .media svg {
+    width: 30px;
+  }
+
+  .navbar-collapse {
+    width: calc(100% - 1.4rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    margin: .7rem;
+    overflow-y: auto;
+    height: auto !important;
+    opacity: 0;
+  }
+
+  .navbar-collapse .navbar-toggler {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+  }
+
+  .navbar-collapse .navbar-toggler span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    opacity: 1;
+    background: #283448;
+  }
+
+  .navbar-collapse .navbar-toggler :nth-child(1) {
+    transform: rotate(135deg);
+  }
+
+  .navbar-collapse .navbar-toggler :nth-child(2) {
+    transform: rotate(-135deg);
+  }
+
+  .navbar-collapse .navbar-collapse-header {
+    display: block;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse .collapse-brand img {
+    height: 36px;
+  }
+
+  .navbar-collapse .collapse-close {
+    text-align: right;
+  }
+
+  .navbar-collapse.collapsing,
+  .navbar-collapse.show {
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    background: #FFF;
+    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: show-navbar-collapse .2s ease forwards;
+  }
+
+  .navbar-collapse.collapsing-out {
+    animation: hide-navbar-collapse .2s ease forwards;
+  }
+}
+
+@keyframes show-navbar-collapse {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: 100% 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hide-navbar-collapse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: 100% 0;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* landing page Section shape start */
+  
+.landing-page .section-shaped {
+    position: relative;
+    overflow: hidden;
+}
+  
+.landing-page .section-shaped:before {
+    top: 680px;
+}
+
+@media (min-width: 768px) {
+    .landing-page .section-shaped {
+      min-height: 500px;
+    }
+}
+
+.landing-page .section-shaped .shape {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page .section-shaped .shape span {
+    position: absolute;
+}
+
+/* shape colors */
+
+.landing-page .section-shaped .shape-color {
+    background: linear-gradient(150deg, #7795f8 15%, #6772e5 70%, #555abf 94%);
+}
+  
+.landing-page .section-shaped .shape-color :nth-child(1) {
+    background: #7795f8;
+}
+  
+.landing-page .section-shaped .shape-color :nth-child(2) {
+    background: #7b9aff;
+}
+  
+.landing-page .section-shaped .shape-color :nth-child(3) {
+    background: #6f8ff8;
+}
+  
+.landing-page .section-shaped .shape-color :nth-child(4) {
+    background: #76eea7;
+}
+  
+.landing-page .section-shaped .shape-color :nth-child(5) {
+    background: #6adaff;
+}
+
+/* shape rectangle parameters */
+
+.landing-page .section-shaped .shape-rectangle span {
+  height: 140px;
+}
+
+.landing-page .section-shaped .shape-rectangle :nth-child(1) {
+
+  width: 66%;
+  left: -16.66666%;
+  bottom: auto;
+}
+
+.landing-page .section-shaped .shape-rectangle :nth-child(2) {
+  width: 40%;
+  top: 54%;
+  right: -16.66666%;
+}
+
+.landing-page .section-shaped .shape-rectangle :nth-child(3) {
+  width: 33.33333%;
+  top: 34%;
+  left: -16.66666%;
+  right: auto;
+}
+
+.landing-page .section-shaped .shape-rectangle :nth-child(4) {
+  width: 60%;
+  bottom: 0;
+  right: -16.66666%;
+  opacity: .6;
+}
+
+.landing-page .section-shaped .shape-rectangle :nth-child(5) {
+  width: 33.33333%;
+  bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+    .landing-page .section-shaped .shape-rectangle span {
+    height: 120px;
+  }
+}
+
+@media (max-width: 767.98px) {
+    .landing-page .section-shaped .shape-rectangle span {
+    height: 90px;
+  }
+}
+
+/* SVG img parameters */
+.landing-page .separator {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 1;
+    transform: translateZ(0);
+    overflow: hidden;
+    pointer-events: none;
+}
+  
+.landing-page .separator svg {
+    position: absolute;
+    pointer-events: none;
+}
+
+.landing-page .separator-bottom {
+    top: auto;
+    bottom: 0;
+}
+  
+.landing-page .separator-bottom svg {
+    bottom: 0;
+}
+
+.landing-page .fill-white {
+    fill: #fff;
+}
+
+.landing-page .page-header{
+    padding-top: 9rem;
+    padding-bottom: 6rem; 
+}
+
+
+/* landing page section shape end */
